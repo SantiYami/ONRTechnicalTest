@@ -35,7 +35,8 @@ const getUsersByApiPaginated = async (api, page, limit) => {
       page: parseInt(page, 10) || 1,
       limit: parseInt(limit, 10) || 10,
       lean: true,
-      sort: { apiId: 1 } // Ordenar ascendente
+      sort: { apiId: 1 }, // Ordenar ascendente
+      select: '-api' // Excluir el campo api
     };
 
     const query = { api };
